@@ -1,0 +1,16 @@
+(() => {
+    let result = "";
+
+    const allLi = document.querySelectorAll("li");
+    for (let i = 0; i < allLi.length; ++i) {
+        const li = allLi[i];
+        
+        const priceEl = li.querySelector('[data-testid="txtItemPrice"]');
+        const nameEl = li.querySelector('[data-testid="productName"]');
+
+        if (priceEl == null || nameEl == null) continue;
+        result += `${priceEl.innerText}, ${nameEl.innerText}\n`;
+    }
+
+    return result;
+})();
